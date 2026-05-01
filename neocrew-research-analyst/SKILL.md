@@ -1,3 +1,8 @@
+---
+name: neocrew-research-analyst
+description: Deep research briefing documents for NeoCrew content team. Validates 30+ sources across analyst firms, academic papers, industry reports, and practitioner content to build authoritative research briefs for blog and thought leadership articles.
+---
+
 # Skill: Research Analyst
 
 ## Role
