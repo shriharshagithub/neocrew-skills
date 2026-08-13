@@ -30,6 +30,10 @@ Skim `references/lessons-learned.md` once — it's short, and every item in it
 was a real bug hit while building this pipeline. Cheaper to read it now than
 to re-discover any of them.
 
+If this is the automated daily run (or anyone asks for Drive delivery
+specifically), also read `references/drive-delivery.md` before you get to
+delivery — the folder ID and upload procedure are there, not in this file.
+
 ## The ad formats
 
 This skill deliberately rotates across **five different ad formats** —
@@ -158,20 +162,24 @@ this system rewards a short, punchy line over a long one.
 ## Automated daily runs
 
 This skill runs on an automated schedule (a cloud routine, separate from
-any local session) so a fresh batch is ready before Shri or his creative
-lead checks in each morning. On an automated run, there's nobody to ask
-scoping questions of — use these defaults instead of asking:
+any local session) so a fresh batch is ready before Shri's team checks in
+each morning. On an automated run, there's nobody to ask scoping questions
+of — use these defaults instead of asking:
 
 - ~12-15 variants, distributed across all four ICP niches and all five
   formats (don't repeat the exact same niche+format+headline combination
   from the day before — vary the specific copy even when the angle
   repeats).
-- Run the full workflow above exactly (quality-check included — an
+- Run the full workflow above through step 7 (quality-check included — an
   unattended run is exactly when a headline-overflow bug would otherwise go
   unnoticed until someone's already looking at a broken ad).
-- Deliver by messaging into the conversation/channel this routine posts to,
-  with the Artifact link, the zip, and a pick of the 1-2 strongest ads from
-  that day's batch and why — same standard as any manual run.
+- **Deliver via Google Drive, not a Claude Artifact** — read
+  `references/drive-delivery.md` for the exact folder ID and upload
+  procedure before delivering. The team checks a shared Drive folder each
+  morning, not a claude.ai link. Still write a closing summary (same
+  standard as any manual run: what you generated, the day's folder link,
+  and a pick of the 1-2 strongest ads and why) — it just isn't the primary
+  delivery mechanism for this path.
 - Clean up `.runs/` after delivering so it doesn't accumulate across days.
 
 ## Iterating
