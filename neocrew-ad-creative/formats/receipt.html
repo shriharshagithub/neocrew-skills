@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; overflow:hidden; }
+  body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background:#F2F0EA; color:#0C1730; }
+  .card { width:1080px; height:1350px; position:relative; display:flex; flex-direction:column; }
+
+  .logo { display:flex; align-items:center; justify-content:center; gap:12px; padding-top:58px; }
+  .logo img { width:40px; height:40px; }
+  .logo .word { font-size:24px; font-weight:800; letter-spacing:-0.4px; }
+  .logo .word .neo { color:#2F6FEB; }
+  .logo .word .crew { color:#0C1730; }
+
+  .hero { flex:1; display:flex; flex-direction:column; justify-content:center; }
+
+  .headline { text-align:center; font-size:38px; font-weight:800; line-height:1.2; letter-spacing:-0.5px; padding:0 100px; }
+
+  .receipt { background:#fff; margin:40px 130px 0; padding:40px 44px 36px; border-radius:6px; box-shadow:0 24px 60px rgba(20,20,20,0.12); font-family: ui-monospace, 'SF Mono', 'Courier New', monospace; }
+  .r-head { text-align:center; }
+  .r-head .store { font-size:20px; font-weight:700; letter-spacing:2px; }
+  .r-head .sub { font-size:14px; color:#8A8A8A; margin-top:6px; }
+  .dash { border-top:2px dashed #D8D5CC; margin:22px 0; }
+  .item { display:flex; align-items:flex-end; gap:8px; font-size:19px; margin-bottom:14px; }
+  .item .dots { flex:1; border-bottom:2px dotted #CFCBC0; margin-bottom:5px; }
+  .item .val { font-weight:700; color:#2FBE7A; }
+  .total { display:flex; align-items:baseline; justify-content:space-between; font-size:26px; font-weight:800; margin-top:6px; }
+  .total .amt { color:#0C1730; }
+  .note { text-align:center; font-size:16px; color:#9AA1B0; margin-top:18px; }
+  .note .strike { text-decoration: line-through; }
+
+  .footer { margin-top:auto; height:132px; background:#dbdee6; display:flex; align-items:center; justify-content:space-between; padding:0 56px; }
+  .footer .brand { display:flex; flex-direction:column; gap:4px; }
+  .footer .site { font-size:15px; font-weight:800; letter-spacing:1.5px; color:#0C1730; }
+  .footer .tag { font-size:19px; font-weight:600; color:#4A5670; }
+  .cta { background:#2F6FEB; color:#fff; font-size:19px; font-weight:700; padding:18px 34px; border-radius:12px; white-space:nowrap; font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="/assets/icon.png">
+      <div class="word"><span class="neo">Neo</span><span class="crew">Crew</span></div>
+    </div>
+    <div class="hero">
+      <div class="headline">{{HEADLINE}}</div>
+
+      <div class="receipt">
+        <div class="r-head">
+          <div class="store">NEOCREW.AI</div>
+          <div class="sub">ORDER RECEIPT &middot; EST. DELIVERY 2&ndash;4 WEEKS</div>
+        </div>
+        <div class="dash"></div>
+        <div class="item"><span>Business Analysis</span><span class="dots"></span><span class="val">INCLUDED</span></div>
+        <div class="item"><span>Product Design</span><span class="dots"></span><span class="val">INCLUDED</span></div>
+        <div class="item"><span>System Architecture</span><span class="dots"></span><span class="val">INCLUDED</span></div>
+        <div class="item"><span>Frontend Build</span><span class="dots"></span><span class="val">INCLUDED</span></div>
+        <div class="item"><span>Backend Build</span><span class="dots"></span><span class="val">INCLUDED</span></div>
+        <div class="dash"></div>
+        <div class="total"><span>TOTAL DUE</span><span class="amt">{{TOTAL}}</span></div>
+        <div class="note">Typical agency quote for the same scope: <span class="strike">{{AGENCY_TOTAL}}</span></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="brand">
+        <div class="site">NEOCREW.AI</div>
+        <div class="tag">{{BOTTOM_TAG}}</div>
+      </div>
+      <div class="cta">{{CTA}}</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+:root {
+  --bg-1: #060B18;
+  --bg-2: #0C1730;
+  --bg-3: #123A8F;
+  --glow-color: #3C6EFF;
+  --glow-opacity: 0.51;
+  --bg-flip-x: -1;
+  --bg-flip-y: -1;
+  --noise-opacity: 0.5;
+
+  --font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --headline-size: 60px;
+  --headline-weight: 800;
+  --headline-lh: 1.1;
+  --headline-ls: -1.3px;
+  --headline-pad: 84px;
+  --sub-size: 24px;
+  --sub-color: #A9BCE8;
+
+  --top-pad: 64px;
+  --headline-gap: 48px;
+  --sub-gap: 22px;
+  --visual-gap: 48px;
+  --caption-gap: 20px;
+  --proof-gap: 56px;
+
+  --visual-w: 924px;
+  --visual-h: 460px;
+  --visual-radius: 28px;
+  --visual-pos-x: {{VISUAL_POS_X}};
+  --visual-pos-y: {{VISUAL_POS_Y}};
+  --visual-shadow: 0.55;
+
+  --bar-height: 132px;
+  --bar-bg: #dbdee6;
+  --cta-bg: #2F6FEB;
+  --cta-radius: 12px;
+}
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; overflow:hidden; }
+  body { font-family: var(--font-family); color:#fff; background: var(--bg-1); }
+  .card { width:1080px; height:1350px; position:relative; overflow:hidden; }
+  .bg {
+    position:absolute; inset:-4%;
+    background:
+      radial-gradient(90% 55% at 50% 0%, color-mix(in srgb, var(--glow-color) calc(var(--glow-opacity)*100%), transparent) 0%, transparent 65%),
+      linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 60%, var(--bg-2) 100%);
+    transform: scaleX(var(--bg-flip-x)) scaleY(var(--bg-flip-y));
+  }
+  .noise { position:absolute; inset:0; background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px); background-size:3px 3px; opacity:var(--noise-opacity); }
+  .content { position:relative; z-index:1; height:100%; }
+  .logo { display:flex; align-items:center; justify-content:center; gap:14px; padding-top:var(--top-pad); }
+  .logo img { width:50px; height:50px; }
+  .logo .word { font-size:32px; font-weight:800; letter-spacing:-0.5px; }
+  .logo .word .neo { color:#5B8DFF; }
+  .logo .word .crew { color:#EDF1FB; }
+  .headline { text-align:center; font-size:var(--headline-size); font-weight:var(--headline-weight); line-height:var(--headline-lh); letter-spacing:var(--headline-ls); margin-top:var(--headline-gap); padding:0 var(--headline-pad); color:#fff; }
+  .sub { text-align:center; font-size:var(--sub-size); color:var(--sub-color); margin-top:var(--sub-gap); padding:0 120px; line-height:1.45; }
+  .visual { width:var(--visual-w); height:var(--visual-h); margin:var(--visual-gap) auto 0; border-radius:var(--visual-radius); overflow:hidden; position:relative; box-shadow:0 30px 70px rgba(0,0,0,var(--visual-shadow)), 0 0 0 1px rgba(255,255,255,0.08); background:#0A1024; }
+  .visual img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:var(--visual-pos-x) var(--visual-pos-y); }
+  .caption { text-align:center; margin-top:var(--caption-gap); font-size:18px; color:#7FA0E8; font-weight:600; }
+  .caption b { color:#CFDCFA; font-weight:700; }
+  .proof { text-align:center; margin-top:var(--proof-gap); }
+  .proof .label { font-size:13px; letter-spacing:2px; color:#5E76AC; font-weight:700; text-transform:uppercase; }
+  .proof .names { margin-top:12px; font-size:19px; color:#D3DEF6; font-weight:600; letter-spacing:0.3px; }
+  .proof .names span { color:#5E76AC; margin:0 10px; font-weight:400; }
+  .bottombar { position:absolute; bottom:0; left:0; right:0; height:var(--bar-height); background:var(--bar-bg); display:flex; align-items:center; justify-content:space-between; padding:0 56px; }
+  .bottombar .brand { display:flex; flex-direction:column; gap:4px; }
+  .bottombar .site { font-size:15px; font-weight:800; letter-spacing:1.5px; color:#0C1730; }
+  .bottombar .tag { font-size:19px; font-weight:600; color:#4A5670; }
+  .cta { background:var(--cta-bg); color:#fff; font-size:19px; font-weight:700; padding:18px 34px; border-radius:var(--cta-radius); white-space:nowrap; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="bg"></div>
+    <div class="noise"></div>
+    <div class="content">
+      <div class="logo">
+        <img src="/assets/icon.png">
+        <div class="word"><span class="neo">Neo</span><span class="crew">Crew</span></div>
+      </div>
+      <div class="headline">{{HEADLINE}}</div>
+      <div class="sub">{{SUBHEAD}}</div>
+      <div class="visual">
+        <img src="/assets/pipeline-banner-web.jpg">
+      </div>
+      <div class="caption"><b>BA &rarr; Designer &rarr; Architect &rarr; Frontend &rarr; Backend</b> &mdash; human-approved at every step</div>
+      <div class="proof">
+        <div class="label">Built by the team behind 300+ products for</div>
+        <div class="names">AB InBev<span>&middot;</span>HDFC<span>&middot;</span>Emaar<span>&middot;</span>Coca-Cola<span>&middot;</span>UCSF</div>
+      </div>
+      <div class="bottombar">
+        <div class="brand">
+          <div class="site">NEOCREW.AI</div>
+          <div class="tag">{{BOTTOM_TAG}}</div>
+        </div>
+        <div class="cta">{{CTA}}</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

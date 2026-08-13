@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; overflow:hidden; }
+  body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background:#0A1024; color:#fff; }
+  .card { width:1080px; height:1350px; position:relative; overflow:hidden; }
+  .bg { position:absolute; inset:0; background: linear-gradient(160deg, #060B18 0%, #0C1730 55%, #102452 100%); }
+  .content { position:relative; z-index:1; height:100%; display:flex; flex-direction:column; }
+
+  .logo { display:flex; align-items:center; justify-content:center; gap:12px; padding-top:66px; }
+  .logo img { width:46px; height:46px; }
+  .logo .word { font-size:27px; font-weight:800; letter-spacing:-0.4px; }
+  .logo .word .neo { color:#5B8DFF; }
+  .logo .word .crew { color:#EDF1FB; }
+
+  .hero { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 80px; text-align:center; }
+  .stat { font-size:290px; font-weight:800; line-height:0.9; color:#5B8DFF; letter-spacing:-6px; }
+  .stat-label { margin-top:14px; font-size:20px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#8FA6DE; }
+  .headline { margin-top:44px; font-size:46px; font-weight:800; line-height:1.15; letter-spacing:-1px; color:#fff; max-width:820px; }
+  .sub { margin-top:20px; font-size:22px; color:#A9BCE8; line-height:1.5; max-width:680px; }
+
+  .bottombar { height:132px; background:#dbdee6; display:flex; align-items:center; justify-content:space-between; padding:0 56px; }
+  .bottombar .brand { display:flex; flex-direction:column; gap:4px; }
+  .bottombar .site { font-size:15px; font-weight:800; letter-spacing:1.5px; color:#0C1730; }
+  .bottombar .tag { font-size:19px; font-weight:600; color:#4A5670; }
+  .cta { background:#2F6FEB; color:#fff; font-size:19px; font-weight:700; padding:18px 34px; border-radius:12px; white-space:nowrap; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="bg"></div>
+    <div class="content">
+      <div class="logo">
+        <img src="/assets/icon.png">
+        <div class="word"><span class="neo">Neo</span><span class="crew">Crew</span></div>
+      </div>
+      <div class="hero">
+        <div class="stat">{{STAT}}</div>
+        <div class="stat-label">{{STAT_LABEL}}</div>
+        <div class="headline">{{HEADLINE}}</div>
+        <div class="sub">{{SUBHEAD}}</div>
+      </div>
+      <div class="bottombar">
+        <div class="brand">
+          <div class="site">NEOCREW.AI</div>
+          <div class="tag">{{BOTTOM_TAG}}</div>
+        </div>
+        <div class="cta">{{CTA}}</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; overflow:hidden; }
+  body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background:#FAFBFD; color:#0C1730; }
+  .card { width:1080px; height:1350px; position:relative; display:flex; flex-direction:column; }
+
+  .logo { display:flex; align-items:center; justify-content:center; gap:12px; padding-top:60px; }
+  .logo img { width:42px; height:42px; }
+  .logo .word { font-size:25px; font-weight:800; letter-spacing:-0.4px; }
+  .logo .word .neo { color:#2F6FEB; }
+  .logo .word .crew { color:#0C1730; }
+
+  .hero { flex:1; display:flex; flex-direction:column; justify-content:center; }
+
+  .headline { text-align:center; font-size:46px; font-weight:800; line-height:1.15; letter-spacing:-1px; padding:0 90px; }
+
+  .table { margin:52px 64px 0; border-radius:22px; overflow:hidden; border:1px solid #E4E6EC; box-shadow:0 20px 50px rgba(20,30,60,0.08); }
+  .row { display:grid; grid-template-columns: 1.1fr 1fr 1fr; align-items:center; }
+  .row.head { background:#0C1730; }
+  .row.head .cell { color:#fff; font-weight:800; font-size:19px; padding:26px 20px; text-align:center; }
+  .row.head .cell.label { text-align:left; padding-left:28px; color:#8FA6DE; font-size:14px; letter-spacing:1px; text-transform:uppercase; }
+  .row:not(.head) { border-top:1px solid #EEF0F4; background:#fff; }
+  .row:not(.head):nth-child(even) { background:#FAFBFD; }
+  .cell { padding:28px 20px; font-size:22px; font-weight:700; text-align:center; }
+  .cell.label { text-align:left; padding-left:28px; font-weight:700; color:#42506E; font-size:19px; }
+  .cell.agency { color:#9AA1B0; font-weight:600; }
+  .cell.agency .x { color:#E0625C; margin-right:6px; }
+  .cell.neo { color:#2F6FEB; font-weight:800; }
+  .cell.neo .check { color:#2FBE7A; margin-right:6px; }
+
+  .footer { margin-top:auto; height:132px; background:#dbdee6; display:flex; align-items:center; justify-content:space-between; padding:0 56px; }
+  .footer .brand { display:flex; flex-direction:column; gap:4px; }
+  .footer .site { font-size:15px; font-weight:800; letter-spacing:1.5px; color:#0C1730; }
+  .footer .tag { font-size:19px; font-weight:600; color:#4A5670; }
+  .cta { background:#2F6FEB; color:#fff; font-size:19px; font-weight:700; padding:18px 34px; border-radius:12px; white-space:nowrap; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="/assets/icon.png">
+      <div class="word"><span class="neo">Neo</span><span class="crew">Crew</span></div>
+    </div>
+    <div class="hero">
+      <div class="headline">{{HEADLINE}}</div>
+
+      <div class="table">
+        <div class="row head">
+          <div class="cell label">&nbsp;</div>
+          <div class="cell">Typical Agency</div>
+          <div class="cell">NeoCrew</div>
+        </div>
+        <div class="row">
+          <div class="cell label">Cost</div>
+          <div class="cell agency"><span class="x">&#10005;</span>$50K&ndash;$100K</div>
+          <div class="cell neo"><span class="check">&#10003;</span>$2K&ndash;$10K</div>
+        </div>
+        <div class="row">
+          <div class="cell label">Timeline</div>
+          <div class="cell agency"><span class="x">&#10005;</span>3&ndash;6 months</div>
+          <div class="cell neo"><span class="check">&#10003;</span>2&ndash;4 weeks</div>
+        </div>
+        <div class="row">
+          <div class="cell label">Who owns it</div>
+          <div class="cell agency"><span class="x">&#10005;</span>Locked in contract</div>
+          <div class="cell neo"><span class="check">&#10003;</span>You, fully</div>
+        </div>
+        <div class="row">
+          <div class="cell label">Approval process</div>
+          <div class="cell agency"><span class="x">&#10005;</span>Black box</div>
+          <div class="cell neo"><span class="check">&#10003;</span>Every stage, by you</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="brand">
+        <div class="site">NEOCREW.AI</div>
+        <div class="tag">{{BOTTOM_TAG}}</div>
+      </div>
+      <div class="cta">{{CTA}}</div>
+    </div>
+  </div>
+</body>
+</html>

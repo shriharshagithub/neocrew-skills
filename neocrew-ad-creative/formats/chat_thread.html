@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; overflow:hidden; }
+  body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background:#EDEFF3; color:#0C1730; }
+  .card { width:1080px; height:1350px; position:relative; display:flex; flex-direction:column; }
+
+  .topbar { background:#fff; padding:56px 48px 22px; display:flex; align-items:center; gap:16px; border-bottom:1px solid #E4E6EC; }
+  .topbar img { width:52px; height:52px; border-radius:50%; }
+  .topbar .name { font-size:22px; font-weight:800; color:#0C1730; }
+  .topbar .status { font-size:15px; color:#6FCF97; font-weight:600; }
+
+  .thread { flex:1; padding:56px 60px; display:flex; flex-direction:column; gap:26px; justify-content:center; }
+  .bubble { max-width:760px; padding:26px 30px; border-radius:26px; font-size:29px; line-height:1.4; font-weight:600; }
+  .bubble.user { align-self:flex-end; background:#2F6FEB; color:#fff; border-bottom-right-radius:8px; }
+  .bubble.neo { align-self:flex-start; background:#fff; color:#0C1730; border:1px solid #E4E6EC; border-bottom-left-radius:8px; }
+  .timestamp { align-self:center; font-size:15px; color:#9AA1B0; font-weight:600; margin:4px 0; }
+
+  .footer { background:#fff; border-top:1px solid #E4E6EC; padding:34px 48px 70px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+  .site { font-size:15px; font-weight:800; letter-spacing:1.5px; color:#0C1730; }
+  .cta { background:#2F6FEB; color:#fff; font-size:19px; font-weight:700; padding:18px 34px; border-radius:12px; white-space:nowrap; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="topbar">
+      <img src="/assets/icon.png">
+      <div>
+        <div class="name">NeoCrew</div>
+        <div class="status">Online</div>
+      </div>
+    </div>
+    <div class="thread">
+      <div class="bubble user">{{MSG_USER}}</div>
+      <div class="timestamp">NeoCrew is typing&hellip;</div>
+      <div class="bubble neo">{{MSG_NEO}}</div>
+    </div>
+    <div class="footer">
+      <div class="site">NEOCREW.AI</div>
+      <div class="cta">{{CTA}}</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; overflow:hidden; }
+  body { font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; background:#FFFFFF; color:#0C1730; }
+  .card { width:1080px; height:1350px; position:relative; display:flex; flex-direction:column; }
+
+  .logo { display:flex; align-items:center; justify-content:center; gap:12px; padding-top:70px; }
+  .logo img { width:44px; height:44px; }
+  .logo .word { font-size:26px; font-weight:800; letter-spacing:-0.4px; }
+  .logo .word .neo { color:#2F6FEB; }
+  .logo .word .crew { color:#0C1730; }
+
+  .hero { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 88px; }
+  .headline { text-align:center; font-size:74px; font-weight:800; line-height:1.08; letter-spacing:-2px; color:#0C1730; }
+  .headline .accent { color:#2F6FEB; }
+  .sub { text-align:center; font-size:26px; color:#5A6478; line-height:1.5; margin-top:36px; max-width:760px; }
+
+  .footer { padding:0 72px 76px; display:flex; align-items:center; justify-content:space-between; }
+  .site { font-size:15px; font-weight:800; letter-spacing:1.5px; color:#0C1730; }
+  .cta { display:flex; align-items:center; gap:10px; background:#2F6FEB; color:#fff; font-size:19px; font-weight:700; padding:18px 30px; border-radius:12px; }
+  .cta .arrow { font-size:20px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <img src="/assets/icon.png">
+      <div class="word"><span class="neo">Neo</span><span class="crew">Crew</span></div>
+    </div>
+    <div class="hero">
+      <div class="headline">{{HEADLINE}}</div>
+      <div class="sub">{{SUBHEAD}}</div>
+    </div>
+    <div class="footer">
+      <div class="site">NEOCREW.AI</div>
+      <div class="cta">{{CTA}} <span class="arrow">&rarr;</span></div>
+    </div>
+  </div>
+</body>
+</html>
